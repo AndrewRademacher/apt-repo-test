@@ -12,4 +12,5 @@ set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrew Rademacher <andrewrademacher@icloud.
 
 install(TARGETS testprogram
     RUNTIME DESTINATION /usr/bin)
+
 include(CPack)
