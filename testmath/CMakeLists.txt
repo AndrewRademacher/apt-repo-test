@@ -3,15 +3,9 @@ project(testmath)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-add_library(testmath SHARED src/testmath.cpp)
-
-set(CPACK_GENERATOR "DEB")
-set(CPACK_PACKAGE_NAME "testmath")
-set(CPACK_PACKAGE_VERSION "1.0")
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrew Rademacher <andrewrademacher@icloud.com>")
+add_library(testmath SHARED src/testmath.cpp include/testmath.h)
+target_include_directories(testmath PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 install(TARGETS testmath
-    LIBRARY DESTINATION /usr/lib)
-
-include(CPack)
+    LIBRARY DESTINATION /usr/lib
+    COMPONENT testmath)
