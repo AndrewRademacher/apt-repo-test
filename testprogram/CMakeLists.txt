@@ -1,6 +1,14 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION  3.5.1)
 project(testprogram)
 
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(testprogram src/main.cpp)
+install(TARGETS testprogram DESTINATION testprogram)
+
+set(CPACK_GENERATOR "DEB")
+set(CPACK_PACKAGE_NAME "testprogram")
+set(CPACK_PACKAGE_VERSION "1.0")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Andrew Rademacher <andrewrademacher@icloud.com>")
+
+include(CPack)
