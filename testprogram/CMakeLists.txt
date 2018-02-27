@@ -7,5 +7,5 @@ add_executable(testprogram src/main.cpp)
 target_link_libraries(testprogram testmath)
 
 install(TARGETS testprogram
-    RUNTIME DESTINATION /usr/bin
+    RUNTIME DESTINATION bin
     COMPONENT testprogram)

@@ -7,5 +7,5 @@ add_library(testmath SHARED src/testmath.cpp include/testmath.h)
 target_include_directories(testmath PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 install(TARGETS testmath
-    LIBRARY DESTINATION /usr/lib
+    LIBRARY DESTINATION lib
     COMPONENT testmath)
